@@ -1,0 +1,23 @@
+{% load static %}
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body style="background-image: url('{% static "Rest_api/background.gif"%}')";>
+  <div style="text-align: center; 
+  margin-top: 150px">
+    <h2>Star Wars API</h2>
+    <h3>Enter a number to see the name of the vehicle and capacity</h3>
+    <form method="get">
+      <input type="text" name="vehicle">
+      <button type="submit" class="btn btn-warning">search</button>
+    </form>
+    {% if vehicle %}
+      <p><strong>Vehicle {{ vehicle.name }}</strong> has <strong>{{ vehicle.passengers }}
+      </strong> passenggers.</p>
+    {% endif %}
+  </div>
+</body>
+</html>  
